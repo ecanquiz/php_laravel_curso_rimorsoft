@@ -26,5 +26,9 @@ Route::get('uuid', function () {
     echo Uuid::generate()->string;
 });
 
+Route::get('/products', 'ProductController@index')->name('products');
+
+Route::get('descargar-productos', 'ProductController@pdf')->name('products.pdf');
+
 
 
