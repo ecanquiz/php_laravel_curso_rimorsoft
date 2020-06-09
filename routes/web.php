@@ -22,5 +22,9 @@ Route::get('/sweetalert', function () {
 
 Route::get('tipo/{type}', 'SweetController@notification');
 
+Route::get('uuid', function () {
+    echo Uuid::generate()->string;
+});
+
 
 
