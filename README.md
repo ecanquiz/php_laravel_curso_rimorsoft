@@ -25,6 +25,15 @@ $ composer require uxweb/sweet-alert
 
 ];
 
+Generate UUID
+
+$ composer require webpatser/laravel-uuid
+
+
+
+
+
+
 
 
 
