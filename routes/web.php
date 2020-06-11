@@ -28,7 +28,9 @@ Route::get('uuid', function () {
 
 Route::get('/products', 'ProductController@index')->name('products');
 
-Route::get('descargar-productos', 'ProductController@pdf')->name('products.pdf');
+Route::get('descargar-productos-pdf', 'ProductController@pdf')->name('products.pdf');
+
+Route::get('descargar-productos-excel', 'ProductController@excel')->name('products.excel');
 
 
 

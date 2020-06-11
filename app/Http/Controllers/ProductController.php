@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ProductsExport;
 
 class ProductController extends Controller
 {
@@ -27,4 +29,24 @@ class ProductController extends Controller
 
         return $pdf->download('listado.pdf');
     }
+
+    public function excel()
+    {
+        return Excel::download(new ProductsExport, 'products-list.xlsx');
+    }
+
+    /* DEPRECATED BY THE VERSION OF Maatwebsite\Excel\Facades\Excel (2.X to 3.X);
+  
+    public function excel()
+    {               
+        Excel::create('Laravel Excel', function($excel) {
+            $excel->sheet('Excel sheet', function($sheet) {
+                //otra opción -> $products = Product::select('name')->get();
+                $products = Product::all();                
+                $sheet->fromArray($products);
+                $sheet->setOrientation('landscape');
+            });
+        })->export('xls');
+    }*/
+
 }

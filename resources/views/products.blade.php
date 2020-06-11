@@ -27,5 +27,16 @@
         <a href="{{ route('products.pdf') }}" class="btn btn-sm btn-primary">
             Descargar productos en PDF
         </a>
-    </p>
+    
+        <a href="{{ route('products.excel') }}" class="btn btn-sm btn-primary">
+            Descargar productos en Excel
+        </a>
+   </p>
 @endsection
+
+
+
+
+    
+
+
